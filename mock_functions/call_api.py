@@ -8,7 +8,7 @@ def call_the_api(url):
         if not req.ok:
             response = req.json()
             if "detail" in response:
-                return {"error": response["detail"]}
+                return {"detail": response["detail"]}
                 
             return {"request_error": "api_error_response"}
 
