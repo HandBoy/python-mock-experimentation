@@ -1,11 +1,12 @@
 ## About Mock
 
+A mock object substitutes and imitates a real object within a testing environment. It is a versatile and powerful tool for improving the quality of your tests.
 Basically we can replace the object which is specified as a first argument for “mock.patch” with MagicMock instance or any object you specified as a second argument. This is very useful when you write unit test to control other module behavior the module tested depends on.
 
 
 ## To install
 
-Create a venv and install requirements:
+Create a env and install requirements:
 ``` shell
 $ sudo pip install virtualenv
 $ which python3
@@ -17,8 +18,9 @@ $ pip install -r requirements.txt
 
 
 ## To Run  
+``` shell
 pytest test_mock.py
-
+```
 
 ## Git
 
@@ -41,6 +43,7 @@ git push -u origin master
 
 
 ## References
+- https://docs.python.org/3/library/unittest.mock.htm
 - https://pythonacademy.com.br/blog/python-e-virtualenv-como-programar-em-ambientes-virtuais
 - https://medium.com/python-pandemonium/better-python-dependency-and-package-management-b5d8ea29dff1
 - https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code
