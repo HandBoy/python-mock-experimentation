@@ -6,18 +6,18 @@ from requests.exceptions import Timeout, ConnectionError
 from mock_functions.call_api import call_the_api
 
 
-def api_response(*args, **kwargs):
+def api_response(endpoint, *args, **kwargs):
     # Create a new Mock to imitate a Response
     response_mock = Mock(ok=True, status_code=200)
 
     data = []
 
-    if "user" in args[0]:
+    if "user" in endpoint:
         data = [
             {"userId": 1, "id": 1, "title": "delectus aut autem", "completed": False},
             {"userId": 1, "id": 1, "title": "delectus aut autem", "completed": False}
         ]
-    elif "profile" in args[0]:
+    elif "profile" in endpoint:
         data = [
             {"profileId": 1, "id": 1, "title": "delectus aut autem", "completed": False},
             {"profileId": 1, "id": 1, "title": "delectus aut autem", "completed": False}
@@ -28,7 +28,7 @@ def api_response(*args, **kwargs):
     return response_mock
 
 
-def api_response_not_found(*args, **kwargs):
+def api_response_not_found(endpoint, *args, **kwargs):
     # Create a new Mock to imitate a Response
     response_mock = Mock(ok=False, status_code=404)
 
